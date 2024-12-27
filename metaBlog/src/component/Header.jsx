@@ -4,6 +4,8 @@ import logo from "../assets/Logo.png";
 import lightMode from "../assets/lightMode.png";
 import { toggleTheme } from "../redux/themeSlice.js";
 import { useSelector, useDispatch } from "react-redux";
+import {setSearch} from "../redux/blogSlice.js"
+
 
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
@@ -23,10 +25,13 @@ const Header = () => {
   const themeMode = () => {
     dispatch(toggleTheme());
   };
+  const handleSearch = (e) =>{
+    dispatch(setSearch(e.target.value))
+  }
 
   return (
     <>
-      <div className=" fixed w-full z-[100] bg-white  ">
+      <div className=" fixed w-full z-[100] bg-white font-work ">
         <div className="flex justify-between max-w-[1300px] m-auto py-[12px] items-center pr-[60px] md:pr-[20px] px-[20px] sm:py-[15px] ">
           <div className="max-w-[140px]  cursor-pointer ">
             <img className="w-full" src={logo} alt="logo" />
@@ -77,6 +82,7 @@ const Header = () => {
                   className="bg-[#F4F4F5] pl-[15px] pr-[30px] text-[#A1A1AA] max-w-[160px] outline-none p-[6px] rounded-[5px]   "
                   type="text"
                   placeholder="Search"
+                  onChange={handleSearch}
                 />
                 <label htmlFor="input">
                   <FaSearch className="absolute text-[#52525B] opacity-[0.7] font[300] right-3 top-[10px] cursor-pointer " />

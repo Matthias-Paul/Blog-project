@@ -6,8 +6,8 @@ const Footer = () => {
   const year = new Date().getFullYear();
   return (
     <>
-      <div className=" w-full bg-[#F6F6F7] font-[Plus Jakarta Sans] m-auto pb-[50px] px-[20px] ">
-        <div className=" min-h-[400px]  max-w-[1300px] border-b-[1px] m-auto pt-[80px] justify-center grid md:grid-cols-2 lg:grid-cols-3 lg:justify-between  ">
+      <div className=" w-full bg-[#F6F6F7] font-jakarta m-auto pb-[50px]">
+        <div className=" min-h-[400px]  max-w-[1300px] border-b-[1px] px-[20px]   m-auto pt-[80px] justify-center grid md:grid-cols-2 lg:grid-cols-3 lg:justify-between  ">
           <div>
             <h1 className="font-[600] text-[#181A2A] text-[18px] pb-[20px]  ">
               {" "}
@@ -119,7 +119,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="flex justify-between max-w-[1300px] md:flex-row flex-col m-auto ">
+        <div className="flex justify-between max-w-[1300px] px-[20px]  md:flex-row flex-col m-auto ">
           <div className=" flex mt-[40px] ">
             <div className="max-w-[45px] mt-[3px] mr-[10px] ">
               {" "}
