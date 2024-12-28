@@ -9,7 +9,7 @@ const Home = () => {
   return (
   <>
      <div className="pt-[80px]  w-full m-auto font-work px-[20px]  ">
-       <div className="  max-w-[1300px] m-auto px-[20px]  " >
+       <div className="  max-w-[1300px] m-auto sm:px-[20px]  " >
              <div className="mt-[20px] pb-[180px] relative  ">
                 <div className="max-w-[1300px] max-h-[650px]"> <img className="w-full  " src={heroImage} alt="hero-image" /></div> 
                 <div className={`absolute bottom-[30px] sm:bottom-[70px] md:bottom-[100px] xl:bottom-[125px] left-[20px] sm:left-[60px] p-[20px] lg:p-[35px] border shadow-md rounded-[12px] max-w-[300px] md:max-w-[400px] lg:max-w-[600px] ${theme ==="light"? "bg-white text-black": "bg-white text-black" } `} > 
@@ -22,13 +22,14 @@ const Home = () => {
                    </div>
                 </div> 
              </div>
-             <div className="flex justify-between sm:pb-[20px] pt-[30px] sm:pt-[-20px]  ">
+             <div className="flex justify-between mb-[20px] pt-[30px] sm:pt-[-20px]  ">
                  <div className="font-[700] text-[18px] md:text-[24px] "> Latest Post</div> 
                 <NavLink to="/blog"> <div className="font-[500] text-[16px] rounded-[8px] hover:bg-[#4B6BFB] bg-[#E8E8EA] py-[6px] px-[22px] cursor-pointer " > Add Blog </div> </NavLink>  
              </div>  
-
+             < BlogPost/>
         </div>
-         < BlogPost/>
+     
+        <div className="pb-[350px]">  <button className=" max-w-[1300px] flex m-auto  mt-[40px] py-[12px] px-[20px] border rounded-[6px] text-[#696A75] text-[13px] sm:text-[16px] font-[500]  "> View All Post </button> </div>
      </div>    
   </>
   )
