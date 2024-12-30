@@ -2,6 +2,7 @@ import {useSelector} from "react-redux"
 import BlogPost from "../component/BlogPost.jsx"
 import heroImage from "../assets/heroImage.png"
 import profileOne from "../assets/profileOne.png"
+import Advertisement from "../component/Advertisement.jsx"
 
 const BlogListing = () => {
   
@@ -24,7 +25,8 @@ const BlogListing = () => {
             
              </div>
              < BlogPost/> 
-       <div className="pb-[350px]">  <button className=" max-w-[1300px] flex m-auto  mt-[40px] py-[12px] px-[20px] border rounded-[6px] text-[#696A75] text-[14px] sm:text-[16px] font-[500]  "> Load More </button> </div>
+       <div className="pb-[60px]">  <button className=" max-w-[1300px] flex m-auto  mt-[40px] py-[12px] px-[20px] border rounded-[6px] text-[#696A75] text-[14px] sm:text-[16px] font-[500]  "> Load More </button> </div>
+        <Advertisement />
         </div>  
     </div>
     </>

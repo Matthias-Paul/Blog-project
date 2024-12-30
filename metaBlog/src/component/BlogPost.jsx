@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { filteredData } from "../redux/blogSlice.js";
-import { blogData } from "../data.js"; // Import blogData
+import { blogData } from "../data.js"; 
 
 const BlogPost = () => {
     // Get filtered blogs
