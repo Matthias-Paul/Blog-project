@@ -2,15 +2,14 @@ import {useSelector} from "react-redux"
 import BlogPost from "../component/BlogPost.jsx"
 import heroImage from "../assets/heroImage.png"
 import profileOne from "../assets/profileOne.png"
-import Advertisement from "../component/Advertisement.jsx"
 
 const BlogListing = () => {
   
   const {theme } =useSelector((state) => state.theme)
   return (
     <>
-    <div  className="pt-[80px]  w-full m-auto font-work px-[20px]  ">
-       <div  className="  max-w-[1300px] m-auto sm:px-[20px]  " >
+    <div  className="pt-[80px]  w-full m-auto font-work px-[20px]   ">
+       <div  className="  max-w-[1300px] flex flex-col justify-center items-center m-auto sm:px-[20px]  " >
        <div className="mt-[20px] mb-[45px] relative ">
        
                 <div className="max-w-[1300px] flex   max-h-[650px]  "> <img className="w-full h-full " src={heroImage} alt="hero-image" /></div> 
@@ -27,9 +26,17 @@ const BlogListing = () => {
              </div>
              < BlogPost/> 
        <div className="pb-[60px]">  <button className=" max-w-[1300px] flex m-auto  mt-[40px] py-[12px] px-[20px] border rounded-[6px] text-[#696A75] text-[14px] sm:text-[16px] font-[500]  "> Load More </button> </div>
-        <Advertisement />
-        </div>  
+      
+       <div className="text-center  w-[300px] sm:w-[400px] md:w-[700px] cursor-pointer rounded-[12px] py-[22px] mb-[90px]  font-work text-[#696A75]  bg-[#E8E8EA] ">
+        <h2> Advertisement</h2>
+        <h2 className=" text-[18px] sm:text-[20px]  font-[600] "> You can place ads</h2> 
+        <h2 className="sm:text-[18px] "> 750x100</h2>
+      </div>
+
+        </div>
+          
     </div>
+  
     </>
   );
 }

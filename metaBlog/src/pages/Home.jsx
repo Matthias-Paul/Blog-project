@@ -59,10 +59,12 @@ const Home = () => {
 
         <div className="pb-[350px]">
           {" "}
+          <NavLink to="/pages" > 
           <button className=" max-w-[1300px] flex m-auto  mt-[40px] py-[12px] px-[20px] border rounded-[6px] text-[#696A75] text-[13px] sm:text-[16px] font-[500]  ">
             {" "}
             View All Post{" "}
-          </button>{" "}
+          </button>
+          </NavLink>{" "}
         </div>
       </div>
     </>
