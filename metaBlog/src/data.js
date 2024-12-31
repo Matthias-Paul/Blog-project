@@ -14,8 +14,8 @@ import image7 from "./assets/image7.png"
 import image8 from "./assets/image8.png"
 import image9 from "./assets/image9.png"
 
-import singlePostImage1 from "./assets/image (1).png"
-import singlePostImage2 from "./assets/image (2).png"
+import singlePostImage1 from "./assets/image10.png"
+import singlePostImage2 from "./assets/image11.png"
 
 
 export const blogData = [
