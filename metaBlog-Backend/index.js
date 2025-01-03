@@ -3,6 +3,10 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 import cors from "cors"
 import getBlog from "./routes/route.js"
+import path from "path"
+import { fileURLToPath } from "url"
+
+
 
 
 dotenv.config();
@@ -14,6 +18,14 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+
+const _filename = fileURLToPath(import.meta.url)
+
+const _dirname = path.dirname(_filename)
+console.log(_dirname)
+
+
+app.use(express.static(path.join(_dirname, "../metaBlog/dist")))
 
 
 
@@ -30,10 +42,8 @@ mongoose
 app.use("/api/blog/", getBlog)  
 
 
-app.get("/", (req, res)=>{
-    res.send("home")
-})
 
+app.get("*", (req, res)  => res.sendFile(path.join(_dirname, "../metaBlog/dist/index.html")))
 
 
 
