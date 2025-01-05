@@ -17,33 +17,36 @@ const dataSlice = createSlice({
             state.search = action.payload; // Update search term
         },
         fetchBlogsStart: (state) => {
-            state.status = "loading"; // Start loading
+            state.status = "loading"; 
         },
         fetchBlogsSuccess: (state, action) => {
             state.status = "succeeded";
-            state.blogs = action.payload; // Update blogs data
+            state.blogs = action.payload;
         },
         fetchBlogsFailure: (state, action) => {
             state.status = "failed";
-            state.error = action.payload; // Update error message
+            state.error = action.payload; 
+            state.blogs = []; // Ensure fallback to empty array
         },
+        
     },   
 });
 
-// Export actions
+
 export const { setSearch, fetchBlogsStart, fetchBlogsSuccess, fetchBlogsFailure } =
     dataSlice.actions;
 
 // **Memoized selector for filtered data**
 export const filteredData = createSelector(
-    [(state) => state.data.blogs, (state) => state.data.search], // Input selectors
+    [(state) => state.data.blogs || [], (state) => state.data.search], // Fallback to empty array
     (blogs, search) =>
-        blogs.filter(
+        blogs.filter(    
             (blog) =>
-                blog.author.toLowerCase().includes(search.toLowerCase()) || // Filter by author
-                blog.title.toLowerCase().includes(search.toLowerCase())     // Filter by title
+                blog.author.toLowerCase().includes(search.toLowerCase()) ||
+                blog.title.toLowerCase().includes(search.toLowerCase())     
         )
 );
+
 
 // Export reducer
 export default dataSlice.reducer;

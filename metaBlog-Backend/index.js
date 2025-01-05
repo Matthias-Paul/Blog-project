@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 import cors from "cors"
 import getBlog from "./routes/route.js"
+import createBlog from "./routes/route.js"
 import path from "path"
 import { fileURLToPath } from "url"
 
@@ -20,10 +21,10 @@ app.use(express.json());
 
 
 const _filename = fileURLToPath(import.meta.url)
-
+  
 const _dirname = path.dirname(_filename)
 console.log(_dirname)
-
+  
 
 app.use(express.static(path.join(_dirname, "../metaBlog/dist")))
 
@@ -37,16 +38,16 @@ mongoose
  
 
   
+          
+
+      app.use("/api/blog/", getBlog)  
+      app.use("/api/blog/", createBlog) 
 
 
-app.use("/api/blog/", getBlog)  
+      app.get("*", (req, res)  => res.sendFile(path.join(_dirname, "../metaBlog/dist/index.html")))
+        
+        
 
-
-
-app.get("*", (req, res)  => res.sendFile(path.join(_dirname, "../metaBlog/dist/index.html")))
-
-
-
-app.listen(PORT, () => {
-  console.log("App is running on port:", +PORT);
-});
+      app.listen(PORT, () => {
+        console.log("App is running on port:", +PORT);
+      });

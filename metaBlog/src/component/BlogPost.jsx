@@ -11,25 +11,29 @@ const BlogPost = () => {
 
  useEffect(() => {
   const fetchData = async () => {
-      dispatch(fetchBlogsStart()); // Start loading
-
-      try {
-          const res = await fetch("http://localhost:3000/api/blog/blog-post");
-          const data = await res.json();
-          dispatch(fetchBlogsSuccess(data)); // Success
-      } catch (error) {
-          dispatch(fetchBlogsFailure(error.message)); // Failure
-      }
+    try {
+      dispatch(fetchBlogsStart());
+      const response = await fetch("http://localhost:3000/api/blog/blog-post");
+      if (!response.ok) throw new Error("Failed to fetch data");
+      const data = await response.json();
+      dispatch(fetchBlogsSuccess(data));
+  } catch (error) {
+      dispatch(fetchBlogsFailure(error.message));
+  }
+  
   };
 
   fetchData();
 }, [dispatch]);
 
+
+
+
   return (
     <>
       <div className="w-full m-auto font-work ">
         <div className=" max-w-[500px] lg:max-w-[900px] xl:max-w-[1300px] grid-cols-1 lg:grid-cols-2 grid xl:grid-cols-3 gap-x-[20px] m-auto">
-     
+   
 
           {blogs.length > 0 ? (
             blogs.map((blog) => {
@@ -47,7 +51,7 @@ const BlogPost = () => {
                    Technology
                   </div>
 
-                  <div className=" text-[22px] sm:text-[26px] font-[600] mb-[24px] leading-[30px]  ">
+                  <div className=" text-[22px] sm:text-[26px] font-[600] mb-[24px] leading-[30px]">
                     {blog.title}
                   </div>
 
@@ -66,8 +70,11 @@ const BlogPost = () => {
             })
           ) : (
             <div className="text-[18px] sm:text-[25px] font-[500] py-[30px]">
-              {status === "loading"? <p> Loading blog data... </p> : <p>  No blog found  </p> }
-            </div>
+              {status === "loading"? <div> Loading blog data... </div> : <div  className=" text-red-400">  No blog found  </div> }
+                 {
+                    status === "failed"? <div  className="text-red-400">Cannot fetch blog data </div>: ""
+                  }
+                          </div>
           )}
           
 
