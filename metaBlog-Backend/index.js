@@ -26,7 +26,6 @@ const _dirname = path.dirname(_filename)
 console.log(_dirname)
   
 
-app.use(express.static(path.join(_dirname, "../metaBlog/dist")))
 
 
 
@@ -43,6 +42,9 @@ mongoose
       app.use("/api/blog/", getBlog)  
       app.use("/api/blog/", createBlog) 
 
+      
+
+      app.use(express.static(path.join(_dirname, "../metaBlog/dist")))
 
       app.get("*", (req, res)  => res.sendFile(path.join(_dirname, "../metaBlog/dist/index.html")))
         
