@@ -13,10 +13,10 @@ const BlogPost = () => {
   const fetchData = async () => {
     try {
       dispatch(fetchBlogsStart());
-      const response = await fetch("http://localhost:3000/api/blog/blog-post");
+      const response = await fetch("https://blog-project-pn4z.onrender.com/api/blog/blog-post");
       if (!response.ok) throw new Error("Failed to fetch data");
       const data = await response.json();
-      dispatch(fetchBlogsSuccess(data));
+      dispatch(fetchBlogsSuccess(data));  
   } catch (error) {
       dispatch(fetchBlogsFailure(error.message));
   }
