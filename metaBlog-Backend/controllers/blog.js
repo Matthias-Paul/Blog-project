@@ -34,7 +34,7 @@ export const createBlog = async (req, res, next) => {
             return res
                 .status(400)
                 .json({ error: "Title must be more than 25 characters." });
-        }
+        }        
 
         // Create a new blog post
         const newBlogPost = new Blog({
