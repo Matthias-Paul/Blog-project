@@ -38,7 +38,7 @@ export const createBlog = async (req, res, next) => {
 
         // Create a new blog post
         const newBlogPost = new Blog({
-            title,
+            title,    
             post,
         });
 

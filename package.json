@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": " nodemon metaBlog-Backend/index.js",
-    "build": "npm install && cd metaBlog && npm install && npm run build"
+    "build": "npm install && npm install --prefix metaBlog  && npm run build --prefix metaBlog"
   },
   "keywords": [],
   "author": "",
