@@ -51,7 +51,7 @@ const BlogPost = () => {
                    Technology
                   </div>
 
-                  <div className=" text-[22px] sm:text-[26px] font-[600] mb-[24px] leading-[30px]">
+                  <div className=" text-[22px]  line-clamp-3 sm:text-[26px] font-[600] mb-[24px] leading-[30px]">
                     {blog.title}
                   </div>
 

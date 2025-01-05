@@ -6,7 +6,7 @@
 
 
 router.get("/blog-post", getBlog)
-router.get("/create-blog", createBlog)
+router.post("/create-blog", createBlog)
 
 
 
