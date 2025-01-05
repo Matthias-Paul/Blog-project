@@ -13,7 +13,7 @@ export const getBlog = async (req, res) =>{
 }
 
 export const createBlog = async (req, res) =>{
-     res.send("created")
+     console.log("created")
 
 
 }
