@@ -42,7 +42,7 @@ export const createBlog = async (req, res, next) => {
         res.status(201).json(newBlogPost);
         console.log("Blog post created successfully!");
     } catch (error) {
-       
+           
         console.error("Error creating blog:", error);
         res.status(500).json({ error: "Internal Server Error." });
     }

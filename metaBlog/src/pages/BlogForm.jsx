@@ -41,7 +41,7 @@ const BlogForm = () => {
              
             }
         } catch (error) {
-          setErrorMessage("Internal Server Error.");
+          setErrorMessage("Unable to connect to the database, check your internet connection!");
 
         }
     };
