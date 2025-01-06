@@ -1,6 +1,5 @@
 import { createSlice, createSelector } from "@reduxjs/toolkit";
 
-// Initial state
 const initialState = {
     blogs: [],
     search: "",
@@ -8,13 +7,13 @@ const initialState = {
     error: null,
 };
 
-// Create slice
+
 const dataSlice = createSlice({
     name: "data",
-    initialState,
+    initialState,    
     reducers: {
         setSearch: (state, action) => {
-            state.search = action.payload; // Update search term
+            state.search = action.payload; 
         },
         fetchBlogsStart: (state) => {
             state.status = "loading"; 
@@ -28,12 +27,13 @@ const dataSlice = createSlice({
             state.error = action.payload; 
             state.blogs = []; // Ensure fallback to empty array
         },
-        
+        addBlog: (state, action) => {
+            state.blogs.push(action.payload); // Add new blog
+        }
     },   
 });
 
-
-export const { setSearch, fetchBlogsStart, fetchBlogsSuccess, fetchBlogsFailure } =
+export const { setSearch, fetchBlogsStart, fetchBlogsSuccess, fetchBlogsFailure, addBlog } =
     dataSlice.actions;
 
 // **Memoized selector for filtered data**
@@ -42,11 +42,9 @@ export const filteredData = createSelector(
     (blogs, search) =>
         blogs.filter(    
             (blog) =>
-                blog.author.toLowerCase().includes(search.toLowerCase()) ||
+                blog.author?.toLowerCase().includes(search.toLowerCase()) ||
                 blog.title.toLowerCase().includes(search.toLowerCase())     
         )
 );
 
-
-// Export reducer
 export default dataSlice.reducer;

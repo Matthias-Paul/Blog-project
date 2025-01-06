@@ -58,7 +58,7 @@ const BlogPost = () => {
                   <div className="flex items-center text-[14px] sm:text-[16px] font-[500] text-[#97989F] ">
                     <div className="w-[35px] h-[35px]  ">
                       <img 
-                        className="w-full h-full "
+                        className="w-full h-full rounded-[50%]  "
                         src={blog.icon}
                         alt="profile"/>
                     </div>

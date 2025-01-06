@@ -48,7 +48,7 @@ const Home = () => {
             </div>
             <NavLink to="/blog">
               {" "}
-              <div className="font-[500] text-[16px] rounded-[8px] hover:bg-[#4B6BFB] bg-[#E8E8EA] py-[6px] px-[22px] cursor-pointer ">
+              <div className="font-[500] text-[16px] rounded-[8px] hover:text-white hover:bg-[#4B6BFB] bg-[#E8E8EA] py-[6px] px-[22px] cursor-pointer ">
                 {" "}
                 Add Blog{" "}
               </div>{" "}
