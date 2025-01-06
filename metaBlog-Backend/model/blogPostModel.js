@@ -39,7 +39,7 @@ const blogSchema = new mongoose.Schema({
 
     image: {
         type:String,
-        default:"https://res.cloudinary.com/drkxtuaeg/image/upload/v1735897362/image2_nrlm3g.png",
+        default:"https://res.cloudinary.com/drkxtuaeg/image/upload/v1736170619/lauren-mancke-aOC7TSLb1o8-unsplash_ksmaf9.jpg",
     },
 })
 
