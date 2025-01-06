@@ -44,7 +44,7 @@ const BlogPost = () => {
                   key={blog.id}
                 >
                   <div>
-                    <img src={blog.image} alt={blog.title} />
+                    <img className="rounded-[6px] " src={blog.image} alt={blog.title} />
                   </div>
 
                   <div className="text-[14px] font-[500] text-[#4B6BFB] max-w-[90px] my-[26px] bg-[#4B6BFB0D] rounded-[6px] px-[10px] py-[4px] ">
