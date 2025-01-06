@@ -39,7 +39,7 @@ export const createBlog = async (req, res, next) => {
         // Save to database
         await newBlogPost.save();
 
-        res.status(201).json(newBlogPost);
+        res.status(201).json(newBlogPost);    
         console.log("Blog post created successfully!");
     } catch (error) {
            
